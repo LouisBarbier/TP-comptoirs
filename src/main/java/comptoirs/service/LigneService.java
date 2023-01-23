@@ -50,8 +50,8 @@ public class LigneService {
         if (comm.getEnvoyeele() != null){
             throw new IllegalArgumentException("La commande est déjà envoyée");
         }
-        if (prod.getUnitesEnStock()-quantite < 0 ){
-            throw new IllegalArgumentException("La quantitee commandée est trop grande");
+        if (prod.getUnitesEnStock()-quantite<0){
+            throw new IllegalArgumentException("La quantité commandée est trop élevée");
         }
         prod.setUnitesEnStock(prod.getUnitesEnStock()-quantite);
         var lign=new Ligne(comm,prod,quantite);
